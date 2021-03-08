@@ -1,4 +1,4 @@
-Balena OS documentation Task 1 details : 
+Project documentation : 
 
 What you will need :
 Raspberry pi 3+/4 , 32 Gb Sd card , balena Etcher software for uploading image to Sd card , SD formatter to format Sd card, and user account of balenaOs where you can get balena Os image. And power source adapter with Usb cable.
