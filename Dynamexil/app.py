@@ -24,9 +24,11 @@ def motor():
     if request.method == 'POST':
         print('In post request')
         data = request.form['nm']
-        print(data)
+        _id = request.form['id']
+        print('{}, {}'.format(data, _id))
         val = int(data)
-        obj.run_motor(val)
+        id = int(_id)
+        obj.run_motor(val, id)
     return render_template('index.html')
     pass
 @app.route('/test')
