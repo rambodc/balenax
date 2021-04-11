@@ -1,12 +1,36 @@
  version: '2'
  services:
-   web:
-     build: ./web
-     ports:
-      - "80:5000"
+   SensorContainer:
+     build: ./SensorContainer
+     privileged: true
+     restart: always
+     ports: 
+      - "81:5000"
+     depends_on:
+      - redis
+     networks:
+      - back-tire
+     links: 
+      - redis
+      - AssemblyContainer
+     
+   AssemblyContainer:
+     build: ./AssemblyContainer
      devices:
       - "/dev/ttyUSB0:/dev/ttyUSB0"
      depends_on:
       - redis
+     links: 
+      - SensorContainer
+     restart: always
+     ports: 
+      - "80:5000"
+     networks:
+      - back-tire
    redis:
-    build: ./redis
+     build: ./redis
+     networks:
+      - back-tire
+ networks:
+  back-tire:
+    driver: bridge
