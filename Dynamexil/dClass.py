@@ -45,6 +45,7 @@ class dClass:
             print("Failed to change the baudrate")
             quit()
 
+
         # Enable Dynamixel Torque
         dxl_comm_result, dxl_error = self.packetHandler.write1ByteTxRx(self.portHandler, self.DXL_ID_CHANGE,
                                                                        self.ADDR_MX_TORQUE_ENABLE, self.TORQUE_ENABLE)
@@ -85,6 +86,8 @@ class dClass:
 
             if not abs(pos - dxl_present_position) > self.DXL_MOVING_STATUS_THRESHOLD:
                 break
+
+
 
     def close_motor(self):
         self.portHandler.closePort()
