@@ -29,23 +29,17 @@ psk=super_secret_wifi_password
 
 From resin-wifi file users can change ssid and psk as i wrote in bold above.After that simply put the sd card in RPI and power up the pi in a few minutes dashboard is up with rpi connection and shows default files on it.  
 
-
 2-Architecture: designing Architecture diagram here: https://app.diagrams.net/#G1sCN8RgmM226EpccBgSQzRW5ANWBQZE8n
-
-
-3- Explanation: 
-
-4- requirements: 
-
-5- Further tests: 
-
-6- Dynmexil SDk: 
+3- Adding balena variables :
+4 - GCP configuration : 
+5- Dynmexil SDk: 
    a- E-Manual Link (AX-12A): https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/
    b- Protocol: https://emanual.robotis.com/docs/en/dxl/protocol1/ 
                 User can find here the  ROBOTIS’s DYNAMIXEL Protocol Compatibility Table with reference and structure with detail explanation of packets 
    c- Github Repo: https://github.com/ROBOTIS-GIT/DynamixelSDK 
-   d- Control table: 
-				There are two types of control table a- EEPROM (https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/#control-table-of-eeprom-area), b- RAM (https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/#control-table-of-ram-area)
-				Data in the RAM Area is reset to initial values when the power is reset(Volatile). On the other hand, data in the EEPROM Area is maintained even when the device is powered off(Non-Volatile)
+   d- Control table: There are two types of control table 
+          a- EEPROM (https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/#control-table-of-eeprom-area), 
+	  b- RAM (https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/#control-table-of-ram-area)
+	Data in the RAM Area is reset to initial values when the power is reset(Volatile). On the other hand, data in the EEPROM Area is maintained even when the device is powered off(Non-Volatile). In both tables R and R/RW shows the tag of readable and rewritable address before chossing any motor first check these tags from both tables
 
 
