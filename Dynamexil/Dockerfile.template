@@ -29,5 +29,9 @@ RUN apt-get update && \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 COPY ./requirements.txt /requirements.txt
 RUN pip3 install -r /requirements.txt
+RUN chmod +x initialsoftware.sh
+RUN ./initialsoftware.sh
+RUN chmod +x generate_keys.sh
+RUN ./generate_keys.sh
 ENV UDEV=1
 CMD ["python3", "app.py"]

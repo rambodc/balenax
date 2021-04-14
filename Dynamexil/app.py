@@ -4,12 +4,15 @@ from redis import Redis
 import time 
 import requests
 import dClass
+import gcpClass
 
 
 app = Flask(__name__)
 redis = Redis(host='redis', port=6379)
 
 obj = dClass.dClass()
+cloud = gcpClass.gcp()
+
 
 @app.route('/')
 def getdata():
